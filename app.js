@@ -29,6 +29,7 @@ app.get('/users', function (req, res, next) {
 
 app.get('/ag', function (req, res, next) {
     try {
+        res.set('content-type', 'text/html');
     res.sendFile('fa.h', { root: '.' });
   } catch (error) {
     res.json({ success: false, message: "Something went wrong:"+error });
